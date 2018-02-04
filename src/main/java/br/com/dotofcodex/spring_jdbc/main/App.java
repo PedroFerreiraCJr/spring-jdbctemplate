@@ -48,9 +48,13 @@ public class App {
 		// Criação da tabela persons
 		// O comando execute serve para uso com comandos SQL DDL
 		StringBuilder table = new StringBuilder();
-		table.append("CREATE TABLE IF NOT EXISTS persons (").append("id bigserial,")
-				.append("name varchar(255) not null,").append("age integer,").append("birthday timestamp,")
-				.append("CONSTRAINT pk_persons_id PRIMARY KEY (id)").append(");");
+		table
+			.append("CREATE TABLE IF NOT EXISTS persons (")
+				.append("id bigserial,")
+				.append("name varchar(255) not null,")
+				.append("age integer,")
+				.append("birthday timestamp,")
+			.append("CONSTRAINT pk_persons_id PRIMARY KEY (id)").append(");");
 
 		template.execute(table.toString());
 
