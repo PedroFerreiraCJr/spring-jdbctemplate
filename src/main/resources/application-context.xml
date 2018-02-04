@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- <context:component-scan base-package="br.com.dotofcodex.spring_jdbc"/>  -->
+	<!-- 
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url" value="jdbc:postgresql://localhost:5432/spring_jdbc" />
+		<property name="username" value="pedro" />
+		<property name="password" value="pedro" />
+	</bean>
+ 	-->
+	
+	<bean id="template" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+	
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="org.postgresql.Driver" />
+		<property name="jdbcUrl" value="jdbc:postgresql://localhost:5432/spring_jdbc" />
+		<property name="user" value="pedro" />
+		<property name="password" value="pedro" />
+		<property name="maxPoolSize" value="50" />
+		<property name="minPoolSize" value="10" />
+		<property name="maxStatements" value="100" />
+		<property name="testConnectionOnCheckout" value="true" />
+	</bean>
+</beans>
