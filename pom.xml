@@ -11,23 +11,25 @@
 	</properties>
 
 	<dependencies>
+		<!-- Spring Core -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<!-- Spring JDBC Abstraction -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		<!-- Pooling -->
+		<!-- Database Connection Pool -->
 		<dependency>
 			<groupId>com.mchange</groupId>
 			<artifactId>c3p0</artifactId>
-			<version>0.9.5.2</version>
+			<version>0.9.5.3</version>
 		</dependency>
-		<!-- JDBC Driver -->
+		<!-- PostgreSQL JDBC Driver -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
