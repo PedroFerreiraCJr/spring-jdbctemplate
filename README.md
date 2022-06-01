@@ -1,3 +1,3 @@
-# spring-jdbc-example
+# Spring JdbcTemplate example
 
-Projeto simples de exemplo de como utilizar a API do projeto JDBC do Spring. Os principais métodos e seus usos foram demonstrados.
+Projeto simples de exemplo de como utilizar a API de abstração do projeto JDBC do Spring.
